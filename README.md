@@ -2,7 +2,7 @@
 
 ## Intro
 
-Auther: Yu-Chiang Huang <tjjh89017@hotmail.com>
+Author: Yu-Chiang Huang <tjjh89017@hotmail.com>
 
 ## Installation
 
