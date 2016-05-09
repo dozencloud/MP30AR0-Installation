@@ -33,15 +33,15 @@ set MAC1 aa:bb:cc:dd:ee:02
 
 Choosing a installation media is a big deal.
 The media should be supported by the kernel.
-For example, cnosider a tragedy senario,
+For example, consider the following tragedy senario,
 we have a USB stick shipped a fabulous Linux distro.
 Then we plug it into our board and UEFI reconizes it, great!
 So we boot our USB instantly. The kernel is loaded into memory and...
 none of filesystem mounted, because of lack of USB driver.
 
-It seems that in there is lack of USB drive in some older 
-linux distro aarch64 installation ISO.
-(Maybe in the newer release it won't be an issue)
+It seems that there is lack of USB drive in some older 
+Linux distro aarch64 installation ISO.
+(Maybe in the newer release it won't be an issue.)
 So we just take a harddisk,
 turn it into installation disk and dance with SATA.
 
