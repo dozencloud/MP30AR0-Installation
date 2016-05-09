@@ -77,3 +77,7 @@ Only one port works. To enable another port, download MP30AR0 devicetree from [o
 
 ### ACPI
 ACPI only works on CentOS, RHELSA, but Fedora.
+
+## Reference
+
+[Richard WM Jones Blogs](https://rwmj.wordpress.com)
