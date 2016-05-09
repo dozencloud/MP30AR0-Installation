@@ -6,7 +6,7 @@ Author: Yu-Chiang Huang <tjjh89017@hotmail.com>
 
 ## Installation
 
-### Requirement
+### Requirements
 
 * UEFI Bootloader
 * Console Wire
