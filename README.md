@@ -32,7 +32,7 @@ set MAC1 aa:bb:cc:dd:ee:02
 #### Installation ISO
 
 Choosing a installation media is a big deal.
-The media should support by the kernel.
+The media should be supported by the kernel.
 For example, cnosider a tragedy senario,
 we have a USB stick shipped a fabulous Linux distro.
 Then we plug it into our board and UEFI reconizes it, great!
