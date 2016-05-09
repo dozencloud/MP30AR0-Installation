@@ -55,7 +55,7 @@ We don't need to modify anything in GRUB.
 
 #### Installation Process
 
-**NOTE: You must have a Console wire to connect ttyS0**
+**NOTE: We must have a Console wire to connect ttyS0**
 
 VGA ports won't display any installation option but display only kernel log. Using console to start VNC mode or install Linux in text mode.
 
