@@ -31,15 +31,29 @@ set MAC1 aa:bb:cc:dd:ee:02
 
 #### Installation ISO
 
-We're not sure, whether DVD or USB stick will work.
+Choosing a installation media is a big deal.
+The media should be supported by the kernel.
+For example, cnosider a tragedy senario,
+we have a USB stick shipped a fabulous Linux distro.
+Then we plug it into our board and UEFI reconizes it, great!
+So we boot our USB instantly. The kernel is loaded into memory and...
+none of filesystem mounted, because of lack of USB driver.
 
-Get the ISO from [Fedora 23](http://dl.fedoraproject.org/pub/fedora-secondary/releases/23/Server/aarch64/iso/) or [CentOS 7.2](http://mirror.centos.org/altarch/7.2.1603/isos/aarch64/), make sure `md5sum` are matched.
+It seems that in there is lack of USB drive in some older 
+linux distro aarch64 installation ISO.
+(Maybe in the newer release it won't be an issue)
+So we just take a harddisk,
+turn it into installation disk and dance with SATA.
 
-We need to prepare a harddisk for installation iso.
-The command `dd` can save our life.
+1. Get the ISO from
+   [Fedora 23](http://dl.fedoraproject.org/pub/fedora-secondary/releases/23/Server/aarch64/iso/) or
+   [CentOS 7.2](http://mirror.centos.org/altarch/7.2.1603/isos/aarch64/)
+2. Make sure that the md5 checksum is matched.
+3. Prepare a installation harddisk.
+   The command `dd` can save our life.
 
 ```shell
-sudo dd if=/path/to/Fedora.iso of=/dev/sdX bs=1M
+sudo dd if=/path/to/Fedora.iso of=/dev/sdX bs=1M conv=fsync
 ```
 
 And then connect the harddisk via SATA.
@@ -62,7 +76,8 @@ We don't need to modify anything in GRUB.
 
 **NOTE: You must have a Console wire to connect ttyS0**
 
-VGA ports won't display any installation option but display only kernel log. Using console to start VNC mode or install Linux in text mode.
+VGA ports won't display any installation option but display only kernel log.
+Using console to start VNC mode or install Linux in text mode.
 
 ```
 screen /dev/ttyS0 115200
