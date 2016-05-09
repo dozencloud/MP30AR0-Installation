@@ -52,17 +52,16 @@ turn it into installation disk and dance with SATA.
 3. Prepare a installation harddisk.
    The command `dd` can save our life.
 
-```shell
-sudo dd if=/path/to/Fedora.iso of=/dev/sdX bs=1M conv=fsync
-```
-
-And then connect the harddisk via SATA.
+   ```shell
+   sudo dd if=/path/to/Fedora.iso of=/dev/sdX bs=1M conv=fsync
+   ```
 
 ### Installation
 
 #### UEFI
 
-Boot installation ISO from UEFI shell. Check for installation disk is `FS0` or `FS1`.
+Boot installation harddisk from UEFI shell.
+Check for installation disk is `FS0` or `FS1`.
 
 ```
 FS1:\EFI\BOOT\BOOTAA64.efi
