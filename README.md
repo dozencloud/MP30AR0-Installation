@@ -31,7 +31,7 @@ set MAC1 aa:bb:cc:dd:ee:02
 
 #### Installation ISO
 
-Choosing a installation media is a big deal.
+Choosing an installation media is a big deal.
 The media should be supported by the kernel.
 For example, consider the following tragedy senario,
 we have a USB stick shipped a fabulous Linux distro.
@@ -39,7 +39,7 @@ Then we plug it into our board and UEFI reconizes it, great!
 So we boot our USB instantly. The kernel is loaded into memory and...
 none of filesystem mounted, because of lack of USB driver.
 
-It seems that there is lack of USB drive in some older 
+It seems that there is lack of USB drive in some older
 Linux distro aarch64 installation ISO.
 (Maybe in the newer release it won't be an issue.)
 So we just take a harddisk,
@@ -60,16 +60,36 @@ turn it into installation disk and dance with SATA.
 
 #### UEFI
 
-Boot installation harddisk from UEFI shell.
-Check for installation disk is `FS0` or `FS1`.
+Now we want to boot installation harddisk.
+There is only an UEFI shell after we press the power button.
+
+The following command can invoke the GRUB on our harddisk.
 
 ```
 FS1:\EFI\BOOT\BOOTAA64.efi
 ```
 
+Note that the `FS1` should be replaced with disk symbol respectively.
+It may be `FS0`, `FS1` or similar. Please try it out if booting fail.
+
 #### GRUB
 
-We don't need to modify anything in GRUB.
+GRUB will do lots of fabulous jobs for us.
+In most of the case, We don't need to modify anything in GRUB.
+
+Note that if there is something funky in devicetree,
+don't afraid to press `e` to enter edit mode, when the GRUB menu appear.
+We can change the boot instruction into something like this:
+
+```
+entry {
+
+    linux /vmlinuz
+    initrd /initrd.img
+    devicetree /some.dtb
+
+}
+```
 
 #### Installation Process
 
